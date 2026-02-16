@@ -1,14 +1,14 @@
 #Aiden Fox and Adit Bansal
-#https://github.com/Ace2932/EE250lab4
+#https://github.com/aditbansal1/Lab4EE250/
 """VM Start Chain"""
 import paho.mqtt.client as mqtt
 import time
 
 def on_connect(client, userdata, flags, rc):
     print("Connected to server with result code "+str(rc))
-    client.subscribe("asfox/pong")
+    client.subscribe("aditbans/pong")
 
-    client.message_callback_add("asfox/pong", on_message_from_number_received_pong)
+    client.message_callback_add("aditbans/pong", on_message_from_number_received_pong)
 
 
 def on_message_from_number_received_pong(client, userdata, msg):
@@ -21,7 +21,7 @@ def on_message_from_number_received_pong(client, userdata, msg):
     sent_number = received_number + 1
     print(f"[START] got number received={received_number} -> publish number sent={sent_number}")
     time.sleep(1)
-    client.publish("asfox/ping", f"{sent_number}")
+    client.publish("aditbans/ping", f"{sent_number}")
 
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     # client.loop_forever()
 
     start_number = 0
-    client.publish("asfox/ping", f"{start_number}")
+    client.publish("aditbans/ping", f"{start_number}")
     print(f"[START] start_number -> publish numberSent={start_number}")
     time.sleep(1)
     client.loop_forever()
