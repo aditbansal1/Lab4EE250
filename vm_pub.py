@@ -1,5 +1,5 @@
 #Aiden Fox and Adit Bansal
-#https://github.com/Ace2932/EE250lab4
+#https://github.com/aditbansal1/Lab4EE250/
 """EE 250L Lab 04 Starter Code
 Run vm_sub.py in a separate terminal on your VM."""
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     while True:
         #replace user with your USC username in all subscriptions
-        client.publish("asfox/ipinfo", f"{ip_address}")
+        client.publish("aditbans/ipinfo", f"{ip_address}")
         print("Publishing ip address")
         time.sleep(4)
 
@@ -50,6 +50,6 @@ if __name__ == '__main__':
         date_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         #publish date and time in their own topics
         """your code here"""
-        client.publish("asfox/datetime", f"{date_time}")
+        client.publish("aditbans/datetime", f"{date_time}")
         print("Publishing date and time")
         time.sleep(4)
