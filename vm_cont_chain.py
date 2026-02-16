@@ -1,5 +1,5 @@
 #Aiden Fox and Adit Bansal
-#https://github.com/Ace2932/EE250lab4
+#https://github.com/aditbansal1/Lab4EE250/
 """VM Cont Chain"""
 import paho.mqtt.client as mqtt
 import time
@@ -7,9 +7,9 @@ import time
 
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
-    client.subscribe("asfox/ping")
+    client.subscribe("aditbans/ping")
 
-    client.message_callback_add("asfox/ping", on_message_from_number_sent_ping)
+    client.message_callback_add("aditbans/ping", on_message_from_number_sent_ping)
 
 
 def on_message_from_number_sent_ping(client, userdata, msg):
@@ -22,7 +22,7 @@ def on_message_from_number_sent_ping(client, userdata, msg):
     sent_number = received_number + 1
     print(f"[CONT] got number sent={received_number} -> publish number received={sent_number}")
     time.sleep(1)
-    client.publish("asfox/pong", f"{sent_number}")
+    client.publish("aditbans/pong", f"{sent_number}")
 
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
