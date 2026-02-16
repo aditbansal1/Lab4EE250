@@ -1,5 +1,5 @@
 #Aiden Fox and Adit Bansal
-#https://github.com/Ace2932/EE250lab4
+#https://github.com/aditbansal1/Lab4EE250/
 """EE 250L Lab 04 Starter Code
 Run vm_pub.py in a separate terminal on your VM."""
 
@@ -16,12 +16,12 @@ def on_connect(client, userdata, flags, rc):
 
     print("Connected to server (i.e., broker) with result code "+str(rc))
     #replace user with your USC username in all subscriptions
-    client.subscribe("asfox/ipinfo")
-    client.subscribe("asfox/datetime")
+    client.subscribe("aditbans/ipinfo")
+    client.subscribe("aditbans/datetime")
 
     #Add the custom callbacks by indicating the topic and the name of the callback handle
-    client.message_callback_add("asfox/ipinfo", on_message_from_ipinfo)
-    client.message_callback_add("asfox/datetime", on_message_from_datetime)
+    client.message_callback_add("aditbans/ipinfo", on_message_from_ipinfo)
+    client.message_callback_add("aditbans/datetime", on_message_from_datetime)
 
 
 """This object (functions are objects!) serves as the default callback for 
